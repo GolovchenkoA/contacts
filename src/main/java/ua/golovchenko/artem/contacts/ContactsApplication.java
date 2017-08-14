@@ -7,6 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ContactsApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(ContactsApplication.class, args);
 	}
 }
+
+
+
