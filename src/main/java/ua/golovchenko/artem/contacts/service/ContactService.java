@@ -5,8 +5,10 @@ import java.util.List;
 
 /**
  * Created by Artem on 14.08.2017.
+ *
+ * @author Artem Golovchenko
  */
 public interface ContactService {
-    List<Contact> getAllExcludeRegexp(String regexp);
+    List<Contact> getByRegexp(String regexp, Boolean match);
     List<Contact> getAll();
 }
