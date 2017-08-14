@@ -1,3 +1,6 @@
+Contacts
+[![Build Status](https://travis-ci.org/GolovchenkoA/contacts.svg?branch=master)](https://travis-ci.org/GolovchenkoA/contacts)
+
 Настройка пеерд запуском программы
 
 1. Создать пустую базу данных
