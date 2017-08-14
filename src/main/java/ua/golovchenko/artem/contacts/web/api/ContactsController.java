@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import ua.golovchenko.artem.contacts.model.Contact;
 import ua.golovchenko.artem.contacts.service.ContactService;
 
@@ -41,12 +42,13 @@ public class ContactsController {
         }
     }
 
-/*    @RequestMapping(value = "/hello/contacts",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Collection<Contact>> getContact(){
-
-    }*/
-
     @RequestMapping(value = "/hello/contacts",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Collection<Contact>> getContactWithFilter(@RequestParam(value="nameFilter") String filter){
+        Collection<Contact> contacts = service.getAllExcludeRegexp(filter);
+        return new ResponseEntity<Collection<Contact>>(contacts, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/hello/contactsAll",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Collection<Contact>> getContacts(){
             //Collection<Contact> contacts = contactMap.values();
             Collection<Contact> contacts = service.getAll();
