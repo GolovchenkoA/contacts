@@ -16,6 +16,8 @@ public class Contact {
     Long id;
     String name;
 
+    public Contact(){}
+
     public Contact(Long id, String name) {
         this.id = id;
         this.name = name;
@@ -39,5 +41,10 @@ public class Contact {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }
